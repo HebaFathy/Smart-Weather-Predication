@@ -1,0 +1,441 @@
+%minimum temp
+%date=wk1read('Date');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for cairo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+pmin=wk1read('Data\Cairo\2006min');
+Tmin=wk1read('Data\Cairo\target2006min');
+Testmin=wk1read('Data\Cairo\2007min');
+Test_targetmin=wk1read('Data\Cairo\target2007min');
+pmin=pmin';
+Tmin=Tmin';
+Testmin=Testmin';
+Test_targetmin=Test_targetmin';
+
+net = newff([min(min(pmin)), max(max(pmin))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmin,Tmin);
+
+
+
+trian_data_min = sim(net,pmin);
+test_output_min=sim(net,Testmin);
+test_output_min_cairo=test_output_min'
+
+%Illustrate results by drawing 
+tim2006min=(1:1:365);
+tim2007min=(1:1:171);
+
+%plot result of Training  
+plot(tim2006min,Tmin,'b',tim2006min,trian_data_min,'m')
+title('Result of Backpropagetion Training 1 Year  "Min Temperature"  for cairo');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007min,Test_targetmin,'b-',tim2007min,test_output_min,'m -')
+title('Result of Backpropagetion Test 1 year "Min Temperature"');
+xlabel('Days "First Two Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for alex%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+pmin=wk1read('Data\Alex\2006min');
+Tmin=wk1read('Data\Alex\target2006min');
+Testmin=wk1read('Data\Alex\2007min');
+Test_targetmin=wk1read('Data\Alex\target2007min');
+pmin=pmin';
+Tmin=Tmin';
+Testmin=Testmin';
+Test_targetmin=Test_targetmin';
+
+net = newff([min(min(pmin)), max(max(pmin))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmin,Tmin);
+
+
+
+trian_data_min = sim(net,pmin);
+test_output_min=sim(net,Testmin);
+test_output_min_alex=test_output_min'
+
+%Illustrate results by drawing 
+tim2006min=(1:1:365);
+tim2007min=(1:1:171);
+
+%plot result of Training  
+plot(tim2006min,Tmin,'b',tim2006min,trian_data_min,'m')
+title('Result of Backpropagetion Training 1 Year  "Min Temperature" ');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007min,Test_targetmin,'b-',tim2007min,test_output_min,'m -')
+title('Result of Backpropagetion Test 1 year "Min Temperature"');
+xlabel('Days "First Two Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for hurgada%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+pmin=wk1read('Data\Hurgada\2006min');
+Tmin=wk1read('Data\Hurgada\target2006min');
+Testmin=wk1read('Data\Hurgada\2007min');
+Test_targetmin=wk1read('Data\Hurgada\target2007min');
+pmin=pmin';
+Tmin=Tmin';
+Testmin=Testmin';
+Test_targetmin=Test_targetmin';
+
+net = newff([min(min(pmin)), max(max(pmin))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmin,Tmin);
+
+
+
+trian_data_min = sim(net,pmin);
+test_output_min=sim(net,Testmin);
+test_output_min_hurgada=test_output_min'
+
+%Illustrate results by drawing 
+tim2006min=(1:1:365);
+tim2007min=(1:1:171);
+
+%plot result of Training  
+plot(tim2006min,Tmin,'b',tim2006min,trian_data_min,'m')
+title('Result of Backpropagetion Training 1 Year  "Min Temperature"');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007min,Test_targetmin,'b-',tim2007min,test_output_min,'m -')
+title('Result of Backpropagetion Test 1 year "Min Temperature"');
+xlabel('Days "First Two Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for luxor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+pmin=wk1read('Data\Luxor\2006min');
+Tmin=wk1read('Data\Luxor\target2006min');
+Testmin=wk1read('Data\Luxor\2007min');
+Test_targetmin=wk1read('Data\Luxor\target2007min');
+pmin=pmin';
+Tmin=Tmin';
+Testmin=Testmin';
+Test_targetmin=Test_targetmin';
+
+net = newff([min(min(pmin)), max(max(pmin))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmin,Tmin);
+
+
+
+trian_data_min = sim(net,pmin);
+test_output_min=sim(net,Testmin);
+test_output_min_luxor=test_output_min'
+
+%Illustrate results by drawing 
+tim2006min=(1:1:365);
+tim2007min=(1:1:171);
+
+%plot result of Training  
+plot(tim2006min,Tmin,'b',tim2006min,trian_data_min,'m')
+title('Result of Backpropagetion Training 1 Year  "Min Temperature"');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007min,Test_targetmin,'b-',tim2007min,test_output_min,'m -')
+title('Result of Backpropagetion Test 1 year "Min Temperature" for luxor');
+xlabel('Days "First  Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for cairo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%maximum temp
+
+pmax=wk1read('Data\Cairo\2006max');
+Tmax=wk1read('Data\Cairo\target2006max');
+Testmax=wk1read('Data\Cairo\2007max');
+Test_targetmax=wk1read('Data\Cairo\target2007max');
+pmax=pmax';
+Tmax=Tmax';
+Testmax=Testmax';
+Test_targetmax=Test_targetmax';
+
+net = newff([min(min(pmax)), max(max(pmax))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmax,Tmax);
+
+
+trian_data_max = sim(net,pmax);
+test_output_max=sim(net,Testmax);
+test_output_max_cairo=test_output_max'
+
+%Illustrate results by drawing 
+tim2006max=(1:1:365);
+tim2007max=(1:1:171);
+
+%plot result of Training  
+plot(tim2006max,Tmax,'b',tim2006max,trian_data_max,'m')
+title('Result of Backpropagetion Training 1 Year  "Max Temperature" for cairo');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007max,Test_targetmax,'b-',tim2007max,test_output_max,'m -')
+title('Result of Backpropagetion Test 1 year "Max Temperature" for cairo');
+xlabel('Days "First  Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for alex%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%maximum temp
+
+pmax=wk1read('Data\Alex\2006max');
+Tmax=wk1read('Data\Alex\target2006max');
+Testmax=wk1read('Data\Alex\2007max');
+Test_targetmax=wk1read('Data\Alex\target2007max');
+pmax=pmax';
+Tmax=Tmax';
+Testmax=Testmax';
+Test_targetmax=Test_targetmax';
+
+net = newff([min(min(pmax)), max(max(pmax))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmax,Tmax);
+
+
+trian_data_max = sim(net,pmax);
+test_output_max=sim(net,Testmax);
+test_output_max_alex=test_output_max'
+
+%Illustrate results by drawing 
+tim2006max=(1:1:365);
+tim2007max=(1:1:171);
+
+%plot result of Training  
+plot(tim2006max,Tmax,'b',tim2006max,trian_data_max,'m')
+title('Result of Backpropagetion Training 1 Year  "Max Temperature" for alex');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007max,Test_targetmax,'b-',tim2007max,test_output_max,'m -')
+title('Result of Backpropagetion Test 1 year "Max Temperature"for alex');
+xlabel('Days "First  Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for hurgada%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%maximum temp
+
+pmax=wk1read('Data\Hurgada\2006max');
+Tmax=wk1read('Data\Hurgada\target2006max');
+Testmax=wk1read('Data\Hurgada\2007max');
+Test_targetmax=wk1read('Data\Hurgada\target2007max');
+pmax=pmax';
+Tmax=Tmax';
+Testmax=Testmax';
+Test_targetmax=Test_targetmax';
+
+net = newff([min(min(pmax)), max(max(pmax))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmax,Tmax);
+
+
+trian_data_max = sim(net,pmax);
+test_output_max=sim(net,Testmax);
+test_output_max_hurgada=test_output_max'
+
+%Illustrate results by drawing 
+tim2006max=(1:1:365);
+tim2007max=(1:1:171);
+
+%plot result of Training  
+plot(tim2006max,Tmax,'b',tim2006max,trian_data_max,'m')
+title('Result of Backpropagetion Training 1 Year  "Max Temperature" for hurgada');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007max,Test_targetmax,'b-',tim2007max,test_output_max,'m -')
+title('Result of Backpropagetion Test 1 year "Max Temperature" for hurgada');
+xlabel('Days "First  Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%for luxor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%maximum temp
+
+pmax=wk1read('Data\Luxor\2006max');
+Tmax=wk1read('Data\Luxor\target2006max');
+Testmax=wk1read('Data\Luxor\2007max');
+Test_targetmax=wk1read('Data\Luxor\target2007max');
+pmax=pmax';
+Tmax=Tmax';
+Testmax=Testmax';
+Test_targetmax=Test_targetmax';
+
+net = newff([min(min(pmax)), max(max(pmax))],[23 1],{'purelin' 'purelin'},'TRAINRP','LEARNGD','MSE');
+
+
+net.numInputs=23;
+net.trainParam.mc=.1
+net.trainParam.min_grad=0;
+net.trainParam.lr=.01
+net.trainParam.epochs =1000;
+net.trainParam.goal = .01;
+net = train(net,pmax,Tmax);
+
+
+trian_data_max = sim(net,pmax);
+test_output_max=sim(net,Testmax);
+test_output_max_luxor=test_output_max'
+
+%Illustrate results by drawing 
+tim2006max=(1:1:365);
+tim2007max=(1:1:171);
+
+%plot result of Training  
+plot(tim2006max,Tmax,'b',tim2006max,trian_data_max,'m')
+title('Result of Backpropagetion Training 1 Year  "Max Temperature"  for luxor');
+xlabel('Days "2006"');
+ylabel('Temperature');
+
+%plot result of Test  
+plot(tim2007max,Test_targetmax,'b-',tim2007max,test_output_max,'m -')
+title('Result of Backpropagetion Test 1 year "Max Temperature" for luxor');
+xlabel('Days "First  Months 2007" ');
+ylabel('Temperature');
+legend({'Actual','Result'})
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%date
+
+zero='0';
+dot='.';
+datecell_index=1;
+year='07';
+date=[];
+size=length(test_output_max);
+date_cell=cell(365,1);
+
+%for of months
+for i=1:1:12;
+    if(i==1 | i==3 | i==5 | i==7 | i==8 | i==10| i==12 )
+        number_days=31;
+    else
+        if(i==4 | i==6 | i==9 | i==11 )
+            number_days=30;
+        else
+            number_days=28;
+        end;
+    end;
+   %if month < 10 put 0 e.g 01,02,etc
+    if(i<10)
+        month=strcat(zero,num2str(i));
+    else
+        month=strcat(num2str(i));
+    end;
+    %for of days
+    for j=1:1:number_days;
+        if(j<10)
+            day=strcat(zero,num2str(j));
+        else
+            day=strcat(num2str(j));
+        end;
+        date_stirng=strcat(month,dot,day,dot,year);
+        date_cell(datecell_index,1)=cellstr(date_stirng);
+        datecell_index=datecell_index+1;
+        
+    end;
+    
+end;
+date= date_cell;
+date
+ size   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Database
+connA=database('weather','root','')
+colnames={'date','min','max'}
+result=cell(size,3);
+
+for i=1:1:size;
+   result(i,1)={date(i)};
+   result(i,2)={test_output_min(i)};
+   result(i,3)={test_output_max(i)};
+   
+end;
+end;
+
+result
+
+
+%insert(connA,'cairo',colnames,result)
+%insert(connA,'alex',colnames,result)
+%insert(connA,'hurgada',colnames,result)
+%insert(connA,'luxor',colnames,result)
+close(connA)
